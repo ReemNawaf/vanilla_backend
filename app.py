@@ -5,12 +5,16 @@ from fastapi.staticfiles import StaticFiles
 import numpy as np
 import pandas as pd
 from PIL import Image
+import os
 from tensorflow.keras.models import load_model
 from sklearn.neighbors import NearestNeighbors
 from fastapi.middleware.cors import CORSMiddleware
 
 # Initialize FastAPI app
 app = FastAPI()
+
+
+os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 
 app.add_middleware(
     CORSMiddleware,
@@ -101,7 +105,7 @@ def knn_recommend(query_embedding, valid_items_embeddings, valid_items_labels, v
     # Save recommended images to the designated folder
     for i, file_path in enumerate(recommended_paths):
         dest_path = f'{recommended_img_path}recommended_{i}.jpg'
-        img_path = f'{file_path[6:]}'
+        img_path = f'{file_path[3:]}'
         paths.append(dest_path)
         print(f'{img_path=}')
         shutil.copy(img_path, dest_path)
