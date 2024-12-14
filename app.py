@@ -1,4 +1,3 @@
-import uvicorn
 import shutil
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import HTMLResponse, JSONResponse
