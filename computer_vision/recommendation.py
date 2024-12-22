@@ -10,7 +10,8 @@ import pandas as pd
 from tensorflow.keras.models import load_model
 
 
-apiUrl = 'http://0.0.0.0:8000'
+apiUrl = 'http://54.162.132.249:8000'
+
 user_img_path_recommend = 'images/upload/recommendation/user_image.jpg'
 recommended_img_path = 'images/results/recommendation/'
 
