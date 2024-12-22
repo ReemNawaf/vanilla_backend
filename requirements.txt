@@ -2,7 +2,7 @@ fastapi
 numpy
 Pillow
 opencv-python
-tensorflow
+tensorflow==2.18.0
 pandas
 scikit-learn
 matplotlib
