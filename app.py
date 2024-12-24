@@ -15,7 +15,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://vanillafashion.netlify.app"],  # Frontend URL
+    allow_origins=["*"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all HTTP headers
@@ -24,7 +24,7 @@ app.add_middleware(
 # Mount images Files
 app.mount("/images", StaticFiles(directory="images"), name="images")
 
-apiUrl = 'http://54.158.224.198:8000'
+apiUrl = 'http://0.0.0.0:8000'
 user_img_path_recommend = 'images/upload/recommendation/user_image.jpg'
 user_img_path_segment = 'images/upload/segmentation/user_image.jpg'
 
