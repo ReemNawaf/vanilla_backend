@@ -85,5 +85,3 @@ def segment_image():
     visualize_predictions(model, img)
 
     return JSONResponse(content={"original": f'{apiUrl}/{user_img_path_segment}', "segmented": f'{apiUrl}/{segmented_img_path}'}, status_code=200)
-
-segment_image()

@@ -2,20 +2,16 @@ import shutil
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-import os
 from fastapi.middleware.cors import CORSMiddleware
 from computer_vision.recommendation import recommend_outfit
 from computer_vision.segmentation import segment_image
 
-
 # Initialize FastAPI app
 app = FastAPI()
 
-os.environ["CUDA_VISIBLE_DEVICES"]="-1"
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Frontend URL
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all HTTP headers
@@ -43,7 +39,7 @@ async def recommend(file: UploadFile = File(...)):
     return recommend_outfit()
 
 # ===| Segmentation route |===
-@app.post("/segmentation")
+@app.post("/segment")
 async def segmentation():
     return segment_image()
 
