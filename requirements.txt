@@ -2,6 +2,8 @@ fastapi
 numpy
 Pillow
 opencv-python
+torch
+torchvision
 tensorflow==2.18.0
 pandas
 scikit-learn

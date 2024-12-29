@@ -1,4 +1,4 @@
-#!/Users/reem/projects/vanilla/backend/venv/bin/python
+#!/Users/reem/projects/vanilla/backend/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

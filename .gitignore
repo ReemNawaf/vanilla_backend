@@ -1,12 +1,12 @@
 # Ignore virtual environment directories
-# venv/
-# .env/
-# .venv/
+venv/
+.env/
+.venv/
 
 # Ignore Python cache files
-# __pycache__/
-# *.pyc
-# *.pyo
+__pycache__/
+*.pyc
+*.pyo
 
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
