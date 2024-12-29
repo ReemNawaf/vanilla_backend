@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from computer_vision.recommendation import recommend_outfit
-from computer_vision.segmentation import segment_image
+# from computer_vision.segmentation import segment_image
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -39,9 +39,9 @@ async def recommend(file: UploadFile = File(...)):
     return recommend_outfit()
 
 # ===| Segmentation route |===
-@app.post("/segment")
-async def segmentation():
-    return segment_image()
+# @app.post("/segment")
+# async def segmentation():
+#     return segment_image()
 
 # ===| Upload Image Recommendation route |===
 @app.post("/upload_image_recommend")
