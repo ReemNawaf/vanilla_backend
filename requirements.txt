@@ -1,13 +1,13 @@
 fastapi
 numpy
 Pillow
-opencv-python
+# opencv-python
 python-dotenv
-torch
-torchvision
+# torch
+# torchvision
 tensorflow==2.18.0
 pandas
 scikit-learn
-matplotlib
+# matplotlib
 python-multipart
 uvicorn

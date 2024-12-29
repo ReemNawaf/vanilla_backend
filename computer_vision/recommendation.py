@@ -5,10 +5,8 @@ import shutil
 import numpy as np
 from PIL import Image
 from sklearn.neighbors import NearestNeighbors
-import shutil
 from fastapi import UploadFile, File
 from fastapi.responses import JSONResponse
-import numpy as np
 import pandas as pd
 from tensorflow.keras.models import load_model
 
