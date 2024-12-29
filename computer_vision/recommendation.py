@@ -1,9 +1,12 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 import shutil
 import numpy as np
 from PIL import Image
 from sklearn.neighbors import NearestNeighbors
 import shutil
-from fastapi import FastAPI, UploadFile, File
+from fastapi import UploadFile, File
 from fastapi.responses import JSONResponse
 import numpy as np
 import pandas as pd

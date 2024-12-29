@@ -1,3 +1,6 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 import numpy as np
 import cv2
 import torch
@@ -5,6 +8,8 @@ import torchvision.transforms as transforms
 from PIL import Image
 import matplotlib.pyplot as plt
 from fastapi.responses import JSONResponse
+
+
 
 model = torch.load('models/segmentation_model.pth')
 
@@ -19,7 +24,7 @@ transform = transforms.Compose([
 ])
 
 resize_dim = (256, 256)  # Define your desired size for images and masks
-mps_device = torch.device("mps")
+device = torch.device("cpu")
 
 # ===| Helper functions |===
 # Image preprocessing
@@ -38,8 +43,9 @@ def getitem():
     return image
 
 def visualize_predictions(model, image):
+    model = model.to(device)
     model.eval()
-    image = image.to(mps_device)
+    image = image.to(device)
     image = image.unsqueeze(0)  # Add batch dimension
 
     # Make predictions
